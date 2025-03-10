@@ -1,4 +1,5 @@
 let listaDeNumerosSorteados = [];
+let numLimite = 10;
 let numeroSecreto = gerarNumeroAleatorio();
 let tentativas = 1;
 
@@ -27,7 +28,7 @@ function verificarChute(){
     if(chute == numeroSecreto){
         exibirTextoNaTela('h1', 'Você Acertou!');
         let palavraTentativas = tentativas > 1? 'tentativas' : 'tenativa';
-        let mensagemTentativas = `Você descobriu o número secreto com ${tentativas} ${palavraTentativas}`
+        let mensagemTentativas = (`Você descobriu o número secreto com ${tentativas} ${palavraTentativas}`)
         exibirTextoNaTela('p', mensagemTentativas);
         document.querySelector('#reiniciar').removeAttribute('disabled');
     } else{
@@ -42,12 +43,19 @@ function verificarChute(){
 }
 
 function gerarNumeroAleatorio() {
-    let numeroEscolhido = parseInt(Math.random() * 10 + 1);
+    let numeroEscolhido = parseInt(Math.random() * numLimite + 1);
+    let quantDeElementos = listaDeNumerosSorteados.length
+
+    if (quantDeElementos == numLimite){
+        listaDeNumerosSorteados = [];
+    }
+
     if (listaDeNumerosSorteados.includes(numeroEscolhido)){
       //Verificando se 'numeroEscolhido' está incluso na lista, caso estiver, chama a função novamente para gerar outro
       return gerarNumeroAleatorio();
     } else {
-        numeroEscolhido.push(numeroEscolhido);
+        listaDeNumerosSorteados.push(numeroEscolhido);
+        console.log(listaDeNumerosSorteados);
         return numeroEscolhido;
     }
 }

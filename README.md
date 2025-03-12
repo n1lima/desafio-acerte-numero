@@ -7,7 +7,7 @@ O objetivo do jogo é descobrir um número secreto entre 1 e 10. A cada tentativ
 
 O jogo também conta com suporte a leitura em voz alta utilizando a biblioteca **Responsive Voice**, tornando a experiência mais acessível para usuários com dificuldades visuais ou dislexia.  
 
-🔗 **Acesse o jogo online:** [https://jogodonumerosecreto-ochre-ten.vercel.app]  
+🔗 **Acesse o jogo online:** https://jogodonumerosecreto-ochre-ten.vercel.app  
 
 ## Tecnologias utilizadas  
 - **HTML5**  
